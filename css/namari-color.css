@@ -52,10 +52,10 @@ a:hover,
 
 /* Transparent Navigation Color on a Banner */
 
-#header nav a,
+/* #header nav a,
 #header i {
   color: #111;
-}
+} */
 
 /* Navigation Colors when the Navigation is sticky and solid */
 
@@ -63,7 +63,7 @@ a:hover,
 #header.nav-solid a,
 #header.nav-solid i,
 #nav-mobile ul li a {
-  color: #333;
+  color: #fff;
 }
 
 /* Navigation Active State */
@@ -125,9 +125,22 @@ a:hover,
 /* Banner Background and Text Colors */
 
 #banner {
+  position: relative; /* Establishes a positioning context for the pseudo-element */
   background: url("../images/banner-images/banner-image-1.jpg") no-repeat center
     top;
   background-size: cover;
+  z-index: 1;
+  /* Add any other styles you want for the banner here */
+}
+
+#banner::before {
+  content: ""; /* Necessary for the pseudo-element to work */
+  position: absolute; /* Position it absolutely within the banner */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  right: 0; /* Stretch it to the right */
+  bottom: 0; /* Stretch it to the bottom */
+  background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% transparency */
 }
 
 /*------------------------------------------------------------------------------------------*/
@@ -166,7 +179,8 @@ body {
   font-size: 62px;
   line-height: 60px;
   font-weight: 800;
-  color: #111;
+  color: #ffffff;
+  filter: drop-shadow(4px 1px 1px #111);
 }
 
 #banner h2 {
@@ -323,7 +337,6 @@ input[type="submit"]:hover {
   color: #999;
 }
 
-.white-bg,
 #nav-main {
-  background-color: #fff;
+  background-color: #000;
 }
