@@ -42,7 +42,7 @@ a:hover,
   background: #d2b356;
 }
 
-.pricing-block-content:hover {
+.project-block-content:hover {
   border-color: #d2b356;
 }
 
@@ -65,7 +65,9 @@ a:hover,
 #nav-mobile ul li a {
   color: #fff;
 }
-
+#nav-mobile ul li a {
+  color: #000 !important;
+}
 /* Navigation Active State */
 
 #header.nav-solid .active {
@@ -80,15 +82,15 @@ a:hover,
 /* Primary Background and Text Colors */
 
 .primary-color,
-.featured .pricing {
+.featured .project {
   background-color: #d2b356;
 }
 
 .primary-color,
 .primary-color .section-title,
 .primary-color .section-subtitle,
-.featured .pricing,
-.featured .pricing p {
+.featured .project,
+.featured .project p {
   color: #fff;
 }
 
