@@ -530,10 +530,6 @@ section {
   font-weight: 700;
 }
 
-#header nav a:hover {
-  opacity: 0.6;
-}
-
 /*Navigation Solid*/
 
 #header.nav-solid [class*="col-"] {
@@ -549,7 +545,7 @@ section {
 
 #header.nav-solid nav a {
   border-bottom: 3px solid;
-  border-color: #000;
+  border-color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -712,10 +708,6 @@ nav#nav-mobile a:hover {
   text-align: center;
 }
 
-.social-icons a:hover {
-  opacity: 0.7;
-}
-
 .social-icons span {
   display: none;
 }
@@ -744,10 +736,6 @@ a img {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   -webkit-backface-visibility: hidden;
-}
-
-a img:hover {
-  opacity: 0.7;
 }
 
 /*------------------------------------------------------------------------------------------*/
@@ -806,7 +794,7 @@ h6 {
 .section-heading h3 {
   font-size: 14px;
   font-weight: bold;
-  color: #ccc;
+  color: #ff4200;
   letter-spacing: 2px;
   padding-bottom: 0;
 }
@@ -1592,7 +1580,7 @@ blockquote {
 }
 
 #scrollUp:before {
-  background: #ccc;
+  background: #ff4400;
   font-family: "fontawesome";
   font-size: 2.4em;
   font-style: normal;
@@ -2133,6 +2121,7 @@ blockquote {
 @media all and (max-width: 1024px) {
   #nav-trigger {
     display: block;
+    background-color: #fff;
   }
 
   nav#nav-main {
@@ -2428,4 +2417,173 @@ blockquote {
   .slvj-lightbox embed {
     height: 432px !important;
   }
+}
+
+/* CSS: Scoped styles for custom cards */
+.custom-cards-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 2rem;
+  justify-items: center;
+}
+
+.custom-card {
+  --blur: 30px;
+  --size: clamp(300px, 50vmin, 600px);
+  width: 100%;
+  height: var(--size);
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  /* color: #000; */
+  transform: translateZ(0);
+  text-decoration: none;
+}
+
+.custom-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.15)))
+    rotate(calc(var(--hover, 0) * 0deg));
+  transition: transform 0.6s;
+}
+
+.custom-card__footer {
+  padding: 0 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: hsl(0 0% 100% / 0.5);
+  backdrop-filter: blur(var(--blur));
+  height: 30%;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 0.5ch;
+  align-content: center;
+}
+
+.custom-card__footer span:nth-of-type(1) {
+  font-size: calc(var(--size) * 0.065);
+  font-weight: 600;
+}
+
+.custom-card__footer span:nth-of-type(2) {
+  font-size: calc(var(--size) * 0.035);
+}
+
+.custom-card__action {
+  position: absolute;
+  aspect-ratio: 1;
+  width: calc(var(--size) * 0.15);
+  bottom: 30%;
+  right: 1.5rem;
+  transform: translateY(50%) translateY(calc((var(--size) * 0.4)))
+    translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+  background: hsl(0 0% 100% / 0.5);
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.custom-card__action svg {
+  width: 50%;
+}
+
+.custom-card:is(:hover, :focus-visible) {
+  --hover: 1;
+}
+
+/* General Section Styling */
+#help {
+  padding: 60px 0;
+}
+
+/* Help Container: CSS Grid Layout */
+.help-container {
+  display: grid;
+  gap: 20px; /* Space between grid items */
+  padding: 0 10px;
+}
+
+/* Define Grid Layout for Different Screen Sizes */
+@media (min-width: 1024px) {
+  .help-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .help-container {
+    grid-template-columns: repeat(3, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 767px) {
+  .help-container {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+/* Styling for Help Blocks */
+.help-block {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Icon Styling */
+.help-icon {
+  font-size: 40px !important;
+  margin-bottom: 15px;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.help-block:hover h3,
+.help-block:hover .help-icon {
+  color: #ff4200;
+}
+
+/* Title Spacing */
+.help-block h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-us {
+  border: 2px solid white;
+  background: none;
+  color: #fff;
+  padding: 10px;
+  width: 10rem;
+  text-align: center;
+  transition: all ease 0.5s;
+  margin: 1rem 0;
+}
+.contact-us:hover {
+  border: 2px solid white;
+  background: white;
+  color: #ff4400;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-contact h3 {
+  color: #fff !important;
+  font-weight: 600;
 }
