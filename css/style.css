@@ -2153,9 +2153,7 @@ blockquote {
     padding: 0;
   }
 
-  .page-border,
-  #scrollUp,
-  #scrollUp:before {
+  .page-border {
     display: none;
   }
 
@@ -2268,9 +2266,9 @@ blockquote {
   }
 
   /* Hide Elements */
-  a#scrollUp {
+  /* a#scrollUp {
     display: none !important;
-  }
+  } */
 }
 
 /* Mobile to Tablet Portrait
