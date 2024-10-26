@@ -2607,3 +2607,62 @@ blockquote {
   overflow: hidden;
   object-fit: cover;
 }
+
+.accordion {
+  width: 80%;
+  /* max-width: 600px; */
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cfcfcf4f;
+  /* color: #fff; */
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #dbdbdb;
+}
+
+.icon {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.active .icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  display: none;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.accordion-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.active + .accordion-content {
+  display: block;
+}
+
+#certifications .accordion-content img{
+  max-height: 500px;
+}
