@@ -1590,7 +1590,7 @@ blockquote {
 }
 
 #scrollUp:before {
-  background: #ff4400;
+  background: #2d6b94;
   font-family: "fontawesome";
   font-size: 2.4em;
   font-style: normal;
@@ -2431,9 +2431,14 @@ blockquote {
 .custom-cards-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   padding: 2rem;
   justify-items: center;
+}
+@media all and (min-width: 450px) {
+  .custom-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 .custom-card {
@@ -2681,7 +2686,7 @@ blockquote {
   /* backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); */
   border: 2px solid rgba(234, 234, 234, 0.89);
-  /* transition: all ease 0.5s; */
+  transition: all ease 0.5s;
 }
 .section-blur-small {
   /* width: 100%; */
@@ -2691,10 +2696,10 @@ blockquote {
   border: 1px solid rgba(234, 234, 234, 0.89);
 }
 
-/* .section-blur:hover,
+.section-blur:hover,
 .section-blur:focus {
   background: rgba(255, 255, 255, 0.5);
-} */
+}
 
 @media screen and (max-width: 568px) {
   .section-blur {
@@ -2703,4 +2708,79 @@ blockquote {
 }
 .problem-statement img {
   border-radius: 18px;
+}
+
+iframe {
+  min-height: 250px;
+  height: 100% !important;
+  width: 100% !important;
+}
+/* Base styles for the container */
+.section-heading {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* height: 100vh; */
+  /* background: linear-gradient(135deg, #f06, #f90); */
+}
+
+/* Base styles for each line */
+.section-heading .line {
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap; /* Keeps text from wrapping */
+  border-right: 4px solid #ffffff; /* Blinking cursor effect */
+  width: 0; /* Initially hide the text */
+  opacity: 0; /* Initially hidden for a fade-in effect */
+  animation: typing 3s steps(30, end) forwards,
+    blink-caret 0.75s step-end infinite, fadeIn 0.5s ease forwards;
+}
+
+/* Delay each line for a staggered effect */
+.section-heading .line:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.section-heading .line:nth-child(2) {
+  animation-delay: 3.5s;
+}
+
+.section-heading .line:nth-child(3) {
+  animation-delay: 6.5s;
+}
+
+/* Typing effect for each line */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Fade-in effect for a smooth appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .section-heading h1 {
+    width: 50vw !important;
+  }
 }

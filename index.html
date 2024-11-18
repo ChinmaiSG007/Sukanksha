@@ -146,12 +146,17 @@
 
             <!--Banner Content-->
             <div id="banner-content" class="row clearfix">
-                <div class="col-38">
+                <div>
                     <div class="section-heading">
-                        <h1>Sukanksha Charitable Trust ®</h1>
+                        <h1>
+                            <span class="line">Sukanksha</span>
+                            <span class="line">Charitable</span>
+                            <span class="line">Trust ®</span>
+                        </h1>
                     </div>
                 </div>
             </div>
+
             <!--End of Row-->
         </header>
 
@@ -399,26 +404,17 @@
 
             <!--Testimonials-->
             <aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2" style="padding: 75px 0;">
-
                 <div class="clearfix section-blur">
-
                     <div class="section-heading wow fadeInUp" data-wow-delay="0.1s">
                         <h3>Team details</h3>
                         <h2 class="section-title">The Board</h2>
                     </div>
-
                     <div class="custom-cards-container wow fadeInUp" data-wow-delay="0.1s">
                         <a href="#" class="custom-card">
                             <img src="images/user-images/Team (3).jpg" alt="Yashodha G" class="custom-card__img">
                             <span class="custom-card__footer">
                                 <span>Yashodha G</span>
                                 <span>Founder President</span>
-                            </span>
-                            <span class="custom-card__action">
-                                <svg viewBox="0 0 448 512" title="play">
-                                    <path
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                </svg>
                             </span>
                         </a>
 
@@ -430,12 +426,6 @@
                                 <span>JnanendraKumar P B</span>
                                 <span>Secretary</span>
                             </span>
-                            <span class="custom-card__action">
-                                <svg viewBox="0 0 448 512" title="play">
-                                    <path
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                </svg>
-                            </span>
                         </a>
 
                         <a href="#" class="custom-card">
@@ -443,12 +433,6 @@
                             <span class="custom-card__footer">
                                 <span>Harini H E</span>
                                 <span>Director</span>
-                            </span>
-                            <span class="custom-card__action">
-                                <svg viewBox="0 0 448 512" title="play">
-                                    <path
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                </svg>
                             </span>
                         </a>
 
@@ -458,17 +442,9 @@
                                 <span>Aravind A</span>
                                 <span>Honourary President</span>
                             </span>
-                            <span class="custom-card__action">
-                                <svg viewBox="0 0 448 512" title="play">
-                                    <path
-                                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                </svg>
-                            </span>
                         </a>
                     </div>
-
                 </div>
-
             </aside>
             <!--End of Testimonials-->
 
@@ -665,6 +641,30 @@
                 const content = header.nextElementSibling;
                 content.classList.toggle('open');
             });
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lines = document.querySelectorAll(".section-heading .line");
+
+            lines.forEach(line => {
+                line.style.animation = "none";
+            });
+
+            setTimeout(() => {
+                lines.forEach((line, index) => {
+                    line.style.animation = `typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite, fadeIn 0.5s ease forwards`;
+                    line.style.animationDelay = `${0.5 + index * 3}s`; // Stagger each line's delay
+                });
+            }, 100);
+
+            // Remove the border after the typing animation completes
+            setTimeout(() => {
+                lines.forEach(line => {
+                    line.style.borderRight = "none";
+                });
+            }, 9500); // Total time for last line's delay (6.5s) + animation (3s) = 9.5s
         });
 
     </script>

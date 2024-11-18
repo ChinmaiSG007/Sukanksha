@@ -360,39 +360,27 @@ body {
 #about .section-blur:hover {
   background: linear-gradient(45deg, #cbeaffd2, #71a1c2e1);
 }
-.problem-statement .section-blur {
-  background: linear-gradient(45deg, #8ee7bead, #a7a7a7cc) !important;
-}
-.problem-statement .section-blur:hover {
-  background: linear-gradient(45deg, #c2ecd9d2, #86b8a9de) !important;
-}
-#project .section-blur {
-  background: linear-gradient(45deg, #faeb69ad, #a7a7a7cc) !important;
-}
-#project .section-blur:hover {
-  background: linear-gradient(45deg, #ebe5b7d8, #c0b870e1) !important;
-}
-#testimonials .section-blur {
-  background: linear-gradient(45deg, #faa369ad, #a7a7a7cc) !important;
-}
-#testimonials .section-blur:hover {
-  background: linear-gradient(45deg, #ebcfb7d8, #c09770e1) !important;
-}
-.help-block-1 {
-  background: linear-gradient(45deg, #faeb69ad, #a7a7a7cc) !important;
-}
-.help-block-1:hover {
-  background: linear-gradient(45deg, #ebe5b7d8, #c0b870e1) !important;
-}
-.help-block-2 {
-  background: linear-gradient(45deg, #faa369ad, #a7a7a7cc) !important;
-}
-.help-block-2:hover {
-  background: linear-gradient(45deg, #ebcfb7d8, #c09770e1) !important;
-}
+.problem-statement .section-blur,
 .help-block-3 {
   background: linear-gradient(45deg, #8ee7bead, #a7a7a7cc) !important;
 }
+.problem-statement .section-blur:hover,
 .help-block-3:hover {
   background: linear-gradient(45deg, #c2ecd9d2, #86b8a9de) !important;
+}
+#project .section-blur,
+.help-block-1 {
+  background: linear-gradient(45deg, #faeb69ad, #a7a7a7cc) !important;
+}
+#project .section-blur:hover,
+.help-block-1:hover {
+  background: linear-gradient(45deg, #ebe5b7d8, #c0b870e1) !important;
+}
+#testimonials .section-blur,
+.help-block-2 {
+  background: linear-gradient(45deg, #faa369ad, #a7a7a7cc) !important;
+}
+#testimonials .section-blur:hover,
+.help-block-2:hover {
+  background: linear-gradient(45deg, #ebcfb7d8, #c09770e1) !important;
 }
