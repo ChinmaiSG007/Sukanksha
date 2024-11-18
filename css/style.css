@@ -1467,12 +1467,13 @@ blockquote {
 /* --------- 6.7 project Table ---------- */
 
 .project-block-content {
-  background: #fff;
-  padding: 25px 0 25px 0;
+  background: #ecececab;
+  padding: 25px 5px 25px 5px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
   transition: all 0.2s ease-in-out 0s;
   position: relative;
-  border: 10px solid #fff;
+  border: 5px solid #b1b1b1;
+  border-radius: 15px;
 }
 
 .project-block ul {
@@ -1482,7 +1483,7 @@ blockquote {
 
 .project-block li {
   padding: 14px 0;
-  border-bottom: 1px dotted #e1e1e1;
+  border-bottom: 1px solid #c5c5c5;
 }
 
 .project-block li:last-of-type {
@@ -1602,6 +1603,7 @@ blockquote {
   line-height: 45px;
   content: "\f106";
   opacity: 1;
+  border-radius: 15px;
 }
 
 /*Preloader*/
@@ -2131,6 +2133,7 @@ blockquote {
   #nav-trigger {
     display: block;
     background-color: #fff;
+    border-radius: 10px;
   }
 
   nav#nav-main {
@@ -2536,13 +2539,14 @@ blockquote {
 
 /* Styling for Help Blocks */
 .help-block {
-  background-color: #ffffff;
+  background-color: #ececec3d;
   padding: 20px;
   margin: 10px 0;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
   transition: color 0.3s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .help-block img {
@@ -2625,16 +2629,16 @@ blockquote {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #cfcfcf4f;
+  background-color: #dfdfdf4f;
   /* color: #fff; */
   cursor: pointer;
   padding: 15px;
   font-size: 18px;
-  transition: background-color 0.3s;
+  transition: all ease 0.3s;
 }
 
 .accordion-header:hover {
-  background-color: #dbdbdb;
+  background-color: #b6b6b64f;
 }
 
 .icon {
@@ -2663,6 +2667,40 @@ blockquote {
   display: block;
 }
 
-#certifications .accordion-content img{
+#certifications .accordion-content img {
   max-height: 500px;
+}
+
+.section-blur {
+  max-width: 92vw !important;
+  margin: 2rem;
+  width: 100%;
+  background: rgba(203, 227, 236, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  border: 2px solid rgba(234, 234, 234, 0.89);
+  /* transition: all ease 0.5s; */
+}
+.section-blur-small {
+  /* width: 100%; */
+  margin: 0 2rem;
+  background: rgba(203, 227, 236, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(234, 234, 234, 0.89);
+}
+
+/* .section-blur:hover,
+.section-blur:focus {
+  background: rgba(255, 255, 255, 0.5);
+} */
+
+@media screen and (max-width: 568px) {
+  .section-blur {
+    max-width: 84vw !important;
+  }
+}
+.problem-statement img {
+  border-radius: 18px;
 }
