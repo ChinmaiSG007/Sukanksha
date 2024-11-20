@@ -797,6 +797,9 @@ h6 {
   color: #ff4200;
   letter-spacing: 2px;
   padding-bottom: 0;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  paint-order: stroke fill;
 }
 
 /*------------------------------------------------------------------------------------------*/
