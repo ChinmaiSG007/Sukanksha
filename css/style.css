@@ -2516,7 +2516,7 @@ blockquote {
 
 /* General Section Styling */
 #help {
-  padding: 60px 0;
+  /* padding: 60px 0; */
 }
 
 /* Help Container: CSS Grid Layout */
@@ -2708,7 +2708,7 @@ blockquote {
     max-width: 84vw !important;
   }
 }
-.problem-statement img {
+#problem-statement img {
   border-radius: 18px;
 }
 
