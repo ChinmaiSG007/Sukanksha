@@ -1030,7 +1030,7 @@ blockquote {
 }
 
 #gallery a:hover img {
-  opacity: 0.15;
+  opacity: 0.45;
   -moz-backface-visibility: hidden;
 }
 
@@ -2614,7 +2614,6 @@ blockquote {
 .gallery-tag img {
   padding: 1rem;
   width: 100%;
-  /* max-height: 30vw; */
   height: 30rem;
   overflow: hidden;
   object-fit: cover;

@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "section1": {
+      "header": "Arts and Craft",
+      "images": [
+        "gallery-image (1).webp",
+        "gallery-image (2).webp",
+        "gallery-image (3).webp",
+        "gallery-image (4).webp",
+        "gallery-image (5).webp"
+      ]
+    },
+    "section2": {
+      "header": "Sukanksha Charitable Trust 2",
+      "images": [
+        "gallery-image (6).webp",
+        "gallery-image (7).webp",
+        "gallery-image (8).webp",
+        "gallery-image (9).webp",
+        "gallery-image (10).webp"
+      ]
+    },
+    "section3": {
+      "header": "Sukanksha Charitable Trust 3",
+      "images": [
+        "gallery-image (11).webp",
+        "gallery-image (12).webp",
+        "gallery-image (13).webp",
+        "gallery-image (14).webp"
+      ]
+    }
+  }
+}
