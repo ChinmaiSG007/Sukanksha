@@ -131,7 +131,9 @@
                                     <a href="./contact.html">Contact us</a>
                                 </li>
                                 <li>
-                                    <a href="./payments.html">Donate</a>
+                                    <a href="#!" class="hover-text">Donate
+                                        <span class="tooltip-text">Updating Soon</span>
+                                    </a>
                                 </li>
                             </ul>
                         </nav>
@@ -171,25 +173,25 @@
                         <li>
                             <a target="_blank" title="Instagram"
                                 href="http://Instagram.com/Vedhika_Yashodha?igshid=YmMy">
-                                <i class="fab fa-instagram fa-1x"></i><span>Instagram</span>
+                                <i class="fab fa-instagram fa-2x"></i><span>Instagram</span>
                             </a>
                         </li>
                         <li>
                             <a target="_blank" title="Twitter"
                                 href="https://x.com/Sukankshatrust?t=De9tK-UpJmgtj_QhVHG52g&s=09">
-                                <i class="fab fa-twitter fa-1x"></i><span>Facebook</span>
+                                <i class="fab fa-twitter fa-2x"></i><span>Facebook</span>
                             </a>
                         </li>
                         <li>
                             <a target="_blank" title="Youtube"
                                 href="https://youtube.com/@sukankshacharitabletrust4108?si=58bOB6EbJ6peo9U1">
-                                <i class="fab fa-youtube fa-1x"></i><span>YouTube</span>
+                                <i class="fab fa-youtube fa-2x"></i><span>YouTube</span>
                             </a>
                         </li>
                         <li>
                             <a target="_blank" title="Linked In"
                                 href="https://www.linkedin.com/in/yashoda-g-vedhika-2794b8114?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                <i class="fab fa-linkedin fa-1x"></i><span>WhatsApp</span>
+                                <i class="fab fa-linkedin fa-2x"></i><span>WhatsApp</span>
                             </a>
                         </li>
                     </ul>
@@ -197,6 +199,12 @@
                     <p>
                         © 2024 Copyright all rights reserved by Sukanksha Charitable Trust
                     </p>
+                    <br>
+                    <div class="tnc">
+                        <a href="./TermsAndCondition.html">Terms and Conditions</a>
+                        |
+                        <a href="./PrivacyPolicy.html">Privacy Policy</a>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -232,7 +240,7 @@
                 // Loop through each section in the JSON
                 for (const sectionKey in data.sections) {
                     const section = data.sections[sectionKey];
-                    const { header, images } = section;
+                    const { header, images, videos, folder } = section;
 
                     // Create and append the header
                     const headerElement = document.createElement('h3');
@@ -252,32 +260,63 @@
                     galleryContainer.appendChild(aside);
 
                     // Add images to the aside
-                    images.forEach((image, index) => {
-                        // Create anchor element
-                        const a = document.createElement('a');
-                        a.href = `images/gallery-images/${image}`;
-                        a.setAttribute('data-featherlight', 'image');
-                        a.classList.add('col-3', 'wow', 'fadeIn', 'gallery-tag');
-                        a.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+                    if (images && Array.isArray(images)) {
+                        images.forEach((image, index) => {
+                            // Create anchor element
+                            const a = document.createElement('a');
+                            a.href = `images/gallery-images/${folder}/${image}`; // Use the folder from JSON
+                            a.setAttribute('data-featherlight', 'image');
+                            a.classList.add('col-3', 'wow', 'fadeIn', 'gallery-tag');
+                            a.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
 
-                        // Create image element
-                        const img = document.createElement('img');
-                        img.src = `images/gallery-images/${image}`;
-                        img.alt = `Gallery image ${index + 1}`;
+                            // Create image element
+                            const img = document.createElement('img');
+                            img.src = `images/gallery-images/${folder}/${image}`; // Use the folder from JSON
+                            img.alt = `Gallery image ${index + 1}`;
 
-                        // Append image to anchor
-                        a.appendChild(img);
+                            // Append image to anchor
+                            a.appendChild(img);
 
-                        // Append anchor to aside
-                        aside.appendChild(a);
-                    });
+                            // Append anchor to aside
+                            aside.appendChild(a);
+                        });
+                    }
+
+                    // Check if videos exist in the section and create video elements
+                    if (videos && Array.isArray(videos)) {
+
+                        // Loop through the video files
+                        videos.forEach((video, index) => {
+                            // Create anchor element for the video
+                            const a = document.createElement('a');
+                            a.href = `images/gallery-images/${folder}/${video}`; // Path to the video
+                            // a.setAttribute('data-featherlight', 'image');
+                            a.classList.add('col-3', 'wow', 'fadeIn', 'gallery-tag');
+                            a.setAttribute('data-wow-delay', `${0.1 + index * 0.1}s`);
+
+                            // Create video element
+                            const videoElement = document.createElement('video');
+                            videoElement.src = `images/gallery-images/${folder}/${video}`; // Video path from JSON
+                            videoElement.controls = true;
+                            videoElement.width = 320; // You can adjust the width as needed
+
+                            // Append video to anchor
+                            a.appendChild(videoElement);
+
+                            // Append anchor to video container
+                            aside.appendChild(a);
+                        });
+
+                        // Append the video container to the gallery
+                        galleryContainer.appendChild(videoContainer);
+                    }
                 }
+
             })
             .catch(error => {
                 console.error("Error loading gallery data:", error);
             });
     </script>
-
 
 </body>
 

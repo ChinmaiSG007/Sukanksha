@@ -1016,7 +1016,10 @@ blockquote {
 /* --------- 6.4 Gallery ---------- */
 
 #gallery img {
-  max-height: 300px;
+  max-height: 400px;
+}
+#gallery video {
+  max-height: 400px;
 }
 
 #gallery [class*="col-"] {
@@ -2380,6 +2383,13 @@ blockquote {
 /* Landscape Tablet to Desktop
 ===============================*/
 @media (min-width: 768px) and (max-width: 1024px) {
+  #gallery img {
+    max-height: 350px;
+  }
+  #gallery video {
+    max-height: 350px;
+  }
+
   #wrapper {
     margin: 0;
     padding: 0;
@@ -2531,6 +2541,10 @@ blockquote {
   .help-container {
     grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
   }
+  .tooltip-text {
+    bottom: -30px;
+    left: 63%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -2540,6 +2554,12 @@ blockquote {
 }
 
 @media (max-width: 767px) {
+  #gallery img {
+    max-height: 250px;
+  }
+  #gallery video {
+    max-height: 250px;
+  }
   .help-container {
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
@@ -2617,6 +2637,14 @@ blockquote {
   height: 30rem;
   overflow: hidden;
   object-fit: cover;
+}
+
+.gallery-tag video {
+  padding: 1rem;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+  object-fit: contain;
 }
 
 .accordion {
@@ -2704,7 +2732,8 @@ blockquote {
 }
 
 @media screen and (max-width: 568px) {
-  .section-blur {
+  .section-blur,
+  .section-blur-tc {
     max-width: 84vw !important;
   }
 }
@@ -2736,6 +2765,7 @@ iframe {
   white-space: nowrap; /* Keeps text from wrapping */
   border-right: 4px solid #ffffff; /* Blinking cursor effect */
   width: 0; /* Initially hide the text */
+  max-width: 360px;
   opacity: 0; /* Initially hidden for a fade-in effect */
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite, fadeIn 0.5s ease forwards;
@@ -2785,4 +2815,339 @@ iframe {
   .section-heading h1 {
     width: 50vw !important;
   }
+}
+
+/* Modal Background */
+#volunteerModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content */
+#volunteerModal .modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+#volunteerModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#volunteerModal .close:hover,
+#volunteerModal .close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Title Styling */
+#volunteerModal .modal h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+#volunteerModal #volunteerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label Styling */
+#volunteerModal label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Input & Textarea Styling */
+#volunteerModal input,
+#volunteerModal select,
+#volunteerModal textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#volunteerModal input:focus,
+#volunteerModal select:focus,
+#volunteerModal textarea:focus {
+  border-color: #007bff;
+}
+
+/* Button Styling */
+#volunteerModal button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#volunteerModal button:hover {
+  background-color: #0056b3;
+}
+
+/* Checkbox & File Styling */
+#volunteerModal input[type="checkbox"] {
+  margin-right: 10px;
+  margin-left: 20px;
+  max-height: 13px !important;
+}
+
+#volunteerModal input[type="file"] {
+  padding: 5px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Form Field Spacing */
+#volunteerModal input[type="text"],
+#volunteerModal input[type="email"],
+#volunteerModal input[type="date"],
+#volunteerModal select,
+#volunteerModal textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Textarea Styling */
+#volunteerModal textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* General Layout Enhancements */
+#volunteerModal .modal-content label,
+#volunteerModal .modal-content input,
+#volunteerModal .modal-content select,
+#volunteerModal .modal-content textarea,
+#volunteerModal .modal-content button {
+  margin-bottom: 10px;
+}
+
+#volunteerModal .modal-content .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#volunteerModal .checkbox-group label {
+  margin-left: 5px;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media screen and (max-width: 768px) {
+  #volunteerModal .modal-content {
+    width: 90%;
+  }
+
+  #volunteerModal .modal h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  #volunteerModal .modal-content label,
+  #volunteerModal .modal-content input,
+  #volunteerModal .modal-content select,
+  #volunteerModal .modal-content textarea {
+    font-size: 14px;
+  }
+}
+
+/* Body Styling When Modal is Open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Loader Container Styles */
+.loader-overlay {
+  position: fixed; /* Change to fixed for true centering */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Slight overlay effect */
+  z-index: 100000; /* Ensure it's on top of other content */
+}
+
+/* Loader Animation Styles */
+.loader {
+  border: 8px solid #f3f3f3; /* Light gray */
+  border-top: 8px solid #24576a; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Disabled State */
+#volunteerModal button[type="submit"]:disabled {
+  background-color: #b5b5b5; /* Light gray background */
+  color: #eee; /* Light text color */
+  cursor: not-allowed; /* Disabled cursor */
+  opacity: 0.6; /* Slightly faded effect */
+  box-shadow: none; /* Remove any shadows */
+  transition: none; /* Remove transition effects */
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  line-height: 0px !important;
+  z-index: 10000;
+  max-width: 200px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  background-color: #192733;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
+  /* top: 100px;
+  right: 230px; */
+}
+
+.hover-text:hover .tooltip-text {
+  visibility: visible;
+}
+.section-title-new {
+  font-weight: 600;
+}
+.tnc {
+  padding-top: 10px;
+  border-top: 1px solid #b1b1b1;
+}
+.tnc a {
+  padding: 0 5px;
+}
+.tnc a:hover {
+  color: #b1b1b1 !important;
+}
+.section-blur-tc {
+  background-color: rgba(255, 255, 255, 0.753) !important;
+  padding: 2rem;
+  max-width: 92vw;
+  margin: 2rem;
+  width: 100%;
+  background: rgba(203, 227, 236, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(61, 61, 61, 0.89);
+}
+.content-tc {
+  list-style: none;
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 80vh !important;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100vh;
+  min-height: 80vh;
+  object-position: center !important;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ensures the container spans the full width */
+  height: 100%; /* Adjust height as needed for your design */
+  overflow: hidden; /* Hides anything outside the container */
+}
+
+.carousel-container img {
+  width: 100vw; /* Makes images span the full width of the container */
+  height: 100%; /* Ensures consistent height for images */
+  object-fit: cover; /* Ensures images fill the container without distortion */
+}
+#banner-content {
+  position: absolute; /* Position it over the carousel */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 4; /* Ensure it's above the carousel images */
+  color: white; /* Text color for visibility */
+}
+
+#banner-content h1 {
+  font-size: 3rem; /* Adjust font size as needed */
+  line-height: 1.2; /* Adjust line spacing */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability on images */
+}
+
+#banner-content .line {
+  display: block; /* Ensures each word/line appears separately */
 }
