@@ -793,7 +793,7 @@ h6 {
 
 .section-heading h3 {
   font-size: 18px;
-  font-weight: 800  ;
+  font-weight: 800;
   color: #d32f2f;
   letter-spacing: 2px;
   padding-bottom: 0;
@@ -1563,7 +1563,7 @@ blockquote {
 }
 
 #landing-footer li a i:hover {
-  color: rgb(221, 221, 221);
+  color: #d32f2f;
 }
 
 #landing-footer h3 {
@@ -2610,8 +2610,8 @@ blockquote {
 }
 .contact-us:hover {
   border: 2px solid white;
-  background: white;
-  color: #ff4400;
+  background: #1565c0;
+  color: white;
 }
 
 .footer-contact {
