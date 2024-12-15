@@ -370,20 +370,20 @@ body {
 }
 #problem-statement .section-blur,
 #help .section-blur {
-  background: linear-gradient(135deg, #d16ba5d5, #f88d93d3) !important;
+  background: linear-gradient(135deg, #6bb9d1d5, #8de3f8d3) !important;
 }
 #problem-statement .section-blur:hover,
 #help .section-blur:hover {
-  background: linear-gradient(135deg, #d16ba5, #f88d92) !important;
+  background: linear-gradient(135deg, #6bb9d1, #8de3f8) !important;
 }
 
 #testimonials .section-blur,
 #certifications .section-blur {
-  background: linear-gradient(135deg, #f1a761d8, #d9461ed5) !important;
+  background: linear-gradient(135deg, #d1b66bde, #f8df8dda) !important;
 }
 #testimonials .section-blur:hover,
 #certifications .section-blur:hover {
-  background: linear-gradient(135deg, #f1a661, #d9481e) !important;
+  background: linear-gradient(135deg, #d1b66b, #f8df8d) !important;
 }
 .help-block-1 {
   background: linear-gradient(135deg, #7f9c49d3, #c3dfafd2) !important;
@@ -394,7 +394,7 @@ body {
   background: linear-gradient(45deg, #ebe5b7d8, #c0b870e1) !important;
 }
 .help-block-2 {
-  background: linear-gradient(135deg, #6bb9d1d5, #8de3f8d3) !important;
+  background: linear-gradient(135deg, #d1b66b, #f8df8d) !important;
 }
 .help-block-3 {
   background: linear-gradient(135deg, #f1a661, #d9481e) !important;
