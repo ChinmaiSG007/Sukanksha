@@ -363,27 +363,33 @@ body {
 #project .section-blur,
 #about .section-blur {
   background: linear-gradient(135deg, #7f9c49d3, #c3dfafd2);
+  border: 2px solid #c3dfaf !important;
 }
 #project .section-blur:hover,
 #about .section-blur:hover {
   background: linear-gradient(135deg, #7f9c49, #c3dfaf);
+  border: 2px solid #7f9c49 !important;
 }
 #problem-statement .section-blur,
 #help .section-blur {
   background: linear-gradient(135deg, #6bb9d1d5, #8de3f8d3) !important;
+  border: 2px solid #8de3f8 !important;
 }
 #problem-statement .section-blur:hover,
 #help .section-blur:hover {
   background: linear-gradient(135deg, #6bb9d1, #8de3f8) !important;
+  border: 2px solid #6bb9d1 !important;
 }
 
 #testimonials .section-blur,
 #certifications .section-blur {
   background: linear-gradient(135deg, #d1b66bde, #f8df8dda) !important;
+  border: 2px solid #f8df8d !important;
 }
 #testimonials .section-blur:hover,
 #certifications .section-blur:hover {
   background: linear-gradient(135deg, #d1b66b, #f8df8d) !important;
+  border: 2px solid #d1b66b !important;
 }
 .help-block-1 {
   background: linear-gradient(135deg, #7f9c49d3, #c3dfafd2) !important;
@@ -397,7 +403,7 @@ body {
   background: linear-gradient(135deg, #d1b66b, #f8df8d) !important;
 }
 .help-block-3 {
-  background: linear-gradient(135deg, #f1a661, #d9481e) !important;
+  background: linear-gradient(135deg, #f1a661, #ff7f5c) !important;
 }
 
 #volunteerModal .modal-content {
