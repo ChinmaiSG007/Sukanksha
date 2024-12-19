@@ -417,3 +417,7 @@ body {
 .help-container a:hover {
   color: #15371b;
 }
+
+::selection {
+  background-color: #ffc814; /* Highlight background */
+}
